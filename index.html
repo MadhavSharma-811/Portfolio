@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Madhav Sharma | Interactive Terminal Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="crt-overlay" aria-hidden="true"></div>
+
+  <main class="terminal-wrap">
+    <section id="boot-screen" class="screen-box" aria-live="polite">
+      <p class="boot-label">booting linux profile module...</p>
+      <pre id="boot-output"></pre>
+
+      <div id="boot-auth" class="hidden">
+        <p id="boot-auth-text" class="system-line"></p>
+        <form id="boot-form" class="prompt-line" autocomplete="off">
+          <label for="boot-input" class="prompt-label">identity@system:~$</label>
+          <span id="boot-display-before" class="terminal-input-display" aria-hidden="true"></span>
+          <span id="boot-display-current" class="terminal-input-current" aria-hidden="true"></span>
+          <span id="boot-display-after" class="terminal-input-display" aria-hidden="true"></span>
+          <input id="boot-input" class="terminal-input" type="text" spellcheck="false" autocapitalize="none" autocomplete="off" aria-label="Name input" />
+        </form>
+      </div>
+    </section>
+
+    <section id="terminal-screen" class="screen-box hidden" aria-label="Interactive terminal shell">
+      <pre id="ascii-name" class="ascii-art" aria-label="ASCII art name">
+ __  __           _ _                
+|  \/  |         | | |               
+| \  / | __ _  __| | |__   __ ___   __
+| |\/| |/ _` |/ _` | '_ \ / _` \ \ / /
+| |  | | (_| | (_| | | | | (_| |\ V / 
+|_|  |_|\__,_|\__,_|_| |_|\__,_| \_/  
+
+  ____  _                               
+ / ___|| |__   __ _ _ __ _ __ ___   __ _ 
+ \___ \| '_ \ / _` | '__| '_ ` _ \ / _` |
+  ___) | | | | (_| | |  | | | | | | (_| |
+ |____/|_| |_|\__,_|_|  |_| |_| |_|\__,_|
+      </pre>
+
+      <p id="welcome-line" class="welcome-line"></p>
+
+      <div id="command-pills" class="command-pills" aria-label="Quick command buttons">
+        <button type="button" class="cmd-pill" data-command="cat education.txt">[RUN: cat education.txt]</button>
+        <button type="button" class="cmd-pill" data-command="ls ./projects">[RUN: ls ./projects]</button>
+        <button type="button" class="cmd-pill" data-command="./skills.sh">[RUN: ./skills.sh]</button>
+        <button type="button" class="cmd-pill" data-command="cat achievements.log">[RUN: cat achievements.log]</button>
+        <button type="button" class="cmd-pill" data-command="clear">[RUN: clear]</button>
+      </div>
+
+      <div id="terminal-output" class="terminal-output"></div>
+
+      <form id="prompt-form" class="prompt-line" autocomplete="off">
+        <label for="command-input" class="prompt-label">madhav@iitg:~$</label>
+        <span id="command-display-before" class="terminal-input-display" aria-hidden="true"></span>
+        <span id="command-display-current" class="terminal-input-current" aria-hidden="true"></span>
+        <span id="command-display-after" class="terminal-input-display" aria-hidden="true"></span>
+        <input id="command-input" class="terminal-input" type="text" spellcheck="false" autocapitalize="none" autocomplete="off" aria-label="Terminal command input" />
+      </form>
+    </section>
+  </main>
+
+  <template id="tmpl-help">
+    <section class="print-block">
+      <p>Available commands:</p>
+      <ul>
+        <li>whoami</li>
+        <li>pwd</li>
+        <li>ls</li>
+        <li>cd &lt;folder&gt;</li>
+        <li>cd ..</li>
+        <li>projects</li>
+        <li>links</li>
+        <li>achievements</li>
+        <li>cat education.txt</li>
+        <li>cat courses.md</li>
+        <li>cat extracurriculars.txt</li>
+        <li>cat skills.cfg</li>
+        <li>cat achievements.log</li>
+        <li>cat about.txt (inside project folders)</li>
+        <li>repo.sh (inside project folders)</li>
+        <li>./skills.sh</li>
+        <li>github.sh</li>
+        <li>linkedin.sh</li>
+        <li>mail.sh</li>
+        <li>threadsafe_queue_lib.sh</li>
+        <li>velora.sh</li>
+        <li>image_convolution_riscv.sh</li>
+        <li>codeforces.sh</li>
+        <li>links</li>
+        <li>clear</li>
+      </ul>
+    </section>
+  </template>
+
+  <template id="tmpl-whoami">
+    <section class="print-block">
+      <p>Madhav Sharma</p>
+      <p>Phone: +91-6284742340</p>
+      <p>Course: B.Tech - Computer Science and Engineering</p>
+      <p>Institute: Indian Institute Of Technology (IIT) Guwahati</p>
+      <p>Email: madhav.sharma@iitg.ac.in | madhav9c24@gmail.com</p>
+      <p>
+        Links:
+        <a class="run-link" href="https://github.com/MadhavSharma-811" target="_blank" rel="noreferrer">[RUN: github.sh]</a>
+        <a class="run-link" href="https://www.linkedin.com/in/madhav-sharma-785790371/" target="_blank" rel="noreferrer">[RUN: linkedin.sh]</a>
+        <a class="run-link" href="mailto:madhav.sharma@iitg.ac.in">[RUN: mail.sh]</a>
+      </p>
+    </section>
+  </template>
+
+  <template id="tmpl-education">
+    <section class="print-block">
+      <ul>
+        <li>B.Tech. (Major): Indian Institute of Technology Guwahati | CGPA: 9.35 (Current) | 2024-Present</li>
+        <li>Senior Secondary (CBSE): 96.0% | 2024</li>
+        <li>Secondary (CBSE): 96.2% | 2022</li>
+      </ul>
+    </section>
+  </template>
+
+  <template id="tmpl-projects">
+    <section class="print-block">
+      <p>-rwxr-xr-x 1 madhav iitg 4096 Jan 2026 threadsafe-queue-lib</p>
+      <p>ThreadsafeQueueLib: High-performance Lock-Free and Wait-Free Queue Library</p>
+      <p>Coding Club, IIT Guwahati | Jan 2026 - Ongoing</p>
+      <p>
+        Link:
+        <a class="run-link" href="https://github.com/AyushGarg8646/ThreadSafeQueue" target="_blank" rel="noreferrer">[RUN: threadsafe_queue_lib.sh]</a>
+      </p>
+      <ul>
+        <li>Designing and implementing a C++ concurrency library providing wait-free SPSC and lock-free MPSC/MPMC queues using atomic memory ordering with std::atomic, optimized for low-latency bursty traffic patterns.</li>
+        <li>Implementing high-performance bounded ring-buffers and unbounded linked-node queues utilizing cache-line alignment to mitigate false sharing and maximize L1/L2 cache efficiency in high-contention scenarios.</li>
+        <li>Architecting a multi-threaded benchmarking framework to perform rigorous stress-testing and measure throughput, per-operation latency, and thread contention under varying workloads.</li>
+      </ul>
+
+      <p>-rwxr-xr-x 1 madhav iitg 4096 Feb 2026 velora</p>
+      <p>Route Optimisation Engine (VELORA)</p>
+      <p>Kriti '26, IIT Guwahati | February 2026</p>
+      <p>
+        Link:
+        <a class="run-link" href="https://github.com/MadhavSharma-811" target="_blank" rel="noreferrer">[RUN: velora.sh]</a>
+      </p>
+      <ul>
+        <li>Developed a dynamic Multi-Depot Vehicle Routing Problem (MD-VRPTW) engine using a Multi-Start Greedy Variable Neighborhood Search (VNS) to minimize aggregate transport costs.</li>
+        <li>Formulated a Mixed-Integer Programming model incorporating NP-hard constraints such as time windows, passenger priority, heterogeneous fleet capacities, and spatial routing.</li>
+        <li>Engineered a Rolling Horizon Framework to handle real-time dynamic request interrupts, categorizing scheduled trips as committed or malleable for fluid re-optimization of active routes.</li>
+      </ul>
+
+      <p>-rwxr-xr-x 1 madhav iitg 4096 Apr 2026 image-convolution-accelerator-riscv</p>
+      <p>Image Convolution Accelerator using RISC-V</p>
+      <p>Course Project CS224 (Prof. Lokesh Sidhu), IIT Guwahati | April 2026</p>
+      <p>
+        Link:
+        <a class="run-link" href="https://github.com/Keshav-goyal006/CS224-Project" target="_blank" rel="noreferrer">[RUN: image_convolution_riscv.sh]</a>
+      </p>
+      <ul>
+        <li>Architected a real-time image processing system in Verilog, bridging a custom RISC-V soft-core with specialized hardware accelerators to optimize high-bandwidth data flow.</li>
+        <li>Designed a 3-stage pipelined processor featuring a dynamic branch prediction unit and a Branch Target Buffer (BTB) to minimize control hazards.</li>
+        <li>Developed a highly parallelized convolution engine using 3x3 MAC units for spatial filtering (grayscale, edge detection) with a custom VGA controller.</li>
+      </ul>
+    </section>
+  </template>
+
+  <template id="tmpl-skills">
+    <section class="print-block">
+      <p>Programming: C/C++, Python*</p>
+      <p>Database Management: MySQL, MongoDB*</p>
+      <p>Web Development: Node.js*, HTML/CSS</p>
+      <p>Miscellaneous: Git*, Windows, Linux*</p>
+      <p>*Elementary proficiency</p>
+    </section>
+  </template>
+
+  <template id="tmpl-achievements">
+    <section class="print-block">
+      <ul>
+        <li>JEE Advanced: Secured AIR 584 (Top 0.4% of 1.5 lakh students).</li>
+        <li>JEE Mains: Secured AIR 881 (Top 0.06% of 15 lakh candidates).</li>
+        <li>
+          Codeforces (Specialist): Max Rating 1591 | Handle: Madhav_18
+          <a class="run-link" href="https://codeforces.com/profile/Madhav_18" target="_blank" rel="noreferrer">[RUN: codeforces.sh]</a>
+        </li>
+        <li>Ranked 995 globally in Round 1093 (Div. 2) out of 20,000+ participants.</li>
+        <li>Ranked 2460 globally in Hello 2026 out of 32,000+ participants.</li>
+        <li>NSEP: Selected among the top 352 students nationwide in the National Standard Examination in Physics.</li>
+      </ul>
+    </section>
+  </template>
+
+  <template id="tmpl-courses">
+    <section class="print-block">
+      <p>Computer Science: Data Structures &amp; Algorithms, Digital Design, Design and Analysis of Algorithms, Computer Architecture and Organization, Database Management Systems, Formal Languages and Automata Theory.</p>
+      <p>Mathematics: Real Analysis, Probability Theory and Random Processes, Elementary Number Theory, Discrete Mathematics.</p>
+    </section>
+  </template>
+
+  <template id="tmpl-extracurriculars">
+    <section class="print-block">
+      <p>Cricket: Won the Silver Medal at Spardha 2026 (Inter-hostel sports tournament at IIT Guwahati)</p>
+    </section>
+  </template>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
