@@ -40,14 +40,22 @@
     "./linkedin.sh": "https://www.linkedin.com/in/madhav-sharma-785790371/",
     "mail.sh": "mailto:madhav.sharma@iitg.ac.in",
     "./mail.sh": "mailto:madhav.sharma@iitg.ac.in",
+    "virtual_physics.sh": "https://github.com/MadhavSharma-811/Virtual-Physics-Sandbox",
+    "./virtual_physics.sh": "https://github.com/MadhavSharma-811/Virtual-Physics-Sandbox",
+    "vortex_engine.sh": "https://github.com/MadhavSharma-811/Vortex",
+    "./vortex_engine.sh": "https://github.com/MadhavSharma-811/Vortex",
+    "lsm_engine.sh": "https://github.com/MadhavSharma-811/lsm-engine",
+    "./lsm_engine.sh": "https://github.com/MadhavSharma-811/lsm-engine",
     "threadsafe_queue_lib.sh": "https://github.com/AyushGarg8646/ThreadSafeQueue",
     "./threadsafe_queue_lib.sh": "https://github.com/AyushGarg8646/ThreadSafeQueue",
-    "velora.sh": "https://github.com/MadhavSharma-811",
-    "./velora.sh": "https://github.com/MadhavSharma-811",
+    "velora.sh": "https://github.com/MadhavSharma-811/Velora-route-optimisation",
+    "./velora.sh": "https://github.com/MadhavSharma-811/Velora-route-optimisation",
     "image_convolution_riscv.sh": "https://github.com/Keshav-goyal006/CS224-Project",
     "./image_convolution_riscv.sh": "https://github.com/Keshav-goyal006/CS224-Project",
     "codeforces.sh": "https://codeforces.com/profile/Madhav_18",
-    "./codeforces.sh": "https://codeforces.com/profile/Madhav_18"
+    "./codeforces.sh": "https://codeforces.com/profile/Madhav_18",
+    "codechef.sh": "https://www.codechef.com/users/madhav_1801",
+    "./codechef.sh": "https://www.codechef.com/users/madhav_1801"
   };
 
   var templateCommands = {
@@ -59,14 +67,44 @@
   var currentPath = [];
 
   var projectCatalog = {
+    "virtual-physics-sandbox": {
+      title: "Virtual Physics Sandbox (VIRTUAL-LAB)",
+      context: "Coding Club, IIT Guwahati | July 2026",
+      repoCommand: "virtual_physics.sh",
+      bullets: [
+        "Engineered a collaborative React 19 and TypeScript digital twin platform, integrating Matter.js to simulate high-fidelity 2D rigid body physics, dynamic spring constraints, and mechanical systems.",
+        "Architected a Node.js and Socket.io backend, deploying high-frequency agent middleware to efficiently broadcast spatial deltas and synchronize collaborative states with strict sub-50ms network latency.",
+        "Developed a real-time Recharts dashboard and a robust MongoDB persistence layer to deploy custom interactive physics templates, tracking granular simulation metrics and user-defined environment variables."
+      ]
+    },
+    "vortex-engine": {
+      title: "Vortex Engine: Distributed Telemetry Processing",
+      context: "Self Project | June 2026",
+      repoCommand: "vortex_engine.sh",
+      bullets: [
+        "Engineered a distributed C++20 telemetry ingestion engine utilizing Apache Kafka to achieve a peak aggregate throughput of 640,000+ msgs/sec across a horizontally scaled, Dockerized multi-node consumer fleet.",
+        "Architected a rigorous zero-allocation data path leveraging cache-aligned, wait-free SPSC ring buffers to entirely eliminate OS kernel bottlenecks, delivering a verified 0 µs P99 latency with a <50 MB footprint.",
+        "Integrated a dynamic shared-object plugin architecture employing AVX2 SIMD vector instructions to seamlessly hot-swap custom processing algorithms and massively accelerate real-time Z-score anomaly detection."
+      ]
+    },
+    "lsm-engine": {
+      title: "LSM-Engine: High-Performance Key-Value Store",
+      context: "Self Project | May 2026",
+      repoCommand: "lsm_engine.sh",
+      bullets: [
+        "Engineered a high-performance C++20 LSM-Tree storage engine achieving a verified 3.89M ops/sec read throughput by implementing zero-allocation skip lists to entirely bypass OS-level heap allocation bottlenecks.",
+        "Architected a robust Multi-Version Concurrency Control (MVCC) system using append-only data structures and custom binary sequence comparators to guarantee snapshot isolation and highly concurrent lock-free reads.",
+        "Optimized read-paths using Murmur3-hashed Bloom Filters to completely short-circuit disk I/O for missing keys, while deploying a background K-Way Min-Heap Compactor to aggressively merge overlapping SSTables."
+      ]
+    },
     "threadsafe-queue-lib": {
       title: "ThreadsafeQueueLib: High-performance Lock-Free and Wait-Free Queue Library",
-      context: "Coding Club, IIT Guwahati | Jan 2026 - Ongoing",
+      context: "Coding Club, IIT Guwahati | Feb 2026 - April 2026",
       repoCommand: "threadsafe_queue_lib.sh",
       bullets: [
-        "Designing and implementing a C++ concurrency library providing wait-free SPSC and lock-free MPSC/MPMC queues using atomic memory ordering with std::atomic, optimized for low-latency bursty traffic patterns.",
-        "Implementing high-performance bounded ring-buffers and unbounded linked-node queues using cache-line alignment to reduce false sharing and improve L1/L2 cache efficiency.",
-        "Architecting a multi-threaded benchmarking framework to measure throughput, per-operation latency, and thread contention across varied workloads."
+        "Designing and implementing a C++ concurrency library providing wait-free SPSC and lock-free MPSC/MPMC queues using atomic memory ordering with std::atomic, specifically optimized for low-latency bursty traffic patterns.",
+        "Implementing high-performance bounded ring-buffers and unbounded linked-node queues utilizing cache-line alignment to mitigate false sharing and maximize L1/L2 cache efficiency in high-contention scenarios.",
+        "Architecting a robust multi-threaded benchmarking framework to perform rigorous stress-testing and measure core metrics including throughput, per-operation latency, and thread contention under varying workloads."
       ]
     },
     velora: {
@@ -74,9 +112,9 @@
       context: "Kriti '26, IIT Guwahati | February 2026",
       repoCommand: "velora.sh",
       bullets: [
-        "Developed a dynamic Multi-Depot Vehicle Routing Problem (MD-VRPTW) engine using a Multi-Start Greedy Variable Neighborhood Search (VNS) to minimize aggregate transport costs.",
-        "Formulated a Mixed-Integer Programming model with NP-hard constraints such as time windows, passenger priority, heterogeneous fleet capacities, and spatial routing.",
-        "Engineered a Rolling Horizon Framework to handle real-time dynamic request interrupts and fluidly re-optimize active routes."
+        "Engineered an MD-VRPTW routing engine employing a Multi-Start Greedy VNS and stochastic micro-batching algorithm, successfully reducing aggregate operational costs by 79.17% and overall travel time by 73.1%.",
+        "Formulated a rigorous Mixed-Integer Programming model enforcing strict lexicographic state acceptance to mathematically resolve complex NP-Hard constraints encompassing time windows and heterogeneous fleets.",
+        "Designed a resilient, adaptive power-law scaling framework that strictly bounds the worst-case search space algorithm complexity to O(V * E log E), ensuring highly deterministic execution times during dense traffic spikes."
       ]
     },
     "image-convolution-accelerator-riscv": {
@@ -84,9 +122,9 @@
       context: "Course Project CS224 (Prof. Lokesh Sidhu), IIT Guwahati | April 2026",
       repoCommand: "image_convolution_riscv.sh",
       bullets: [
-        "Architected a real-time image processing system in Verilog, bridging a custom RISC-V soft-core with hardware accelerators for high-bandwidth data flow.",
-        "Designed a 3-stage pipelined processor with dynamic branch prediction and a Branch Target Buffer (BTB) to minimize control hazards.",
-        "Developed a parallel 3x3 MAC convolution engine for grayscale and edge filters with a custom VGA controller."
+        "Built a RISC-V SoC (RV32IM) in Verilog with a 3-stage pipelined CPU, register forwarding, dual reset (full + warm), and an SoC bus routing traffic to DMEM, accelerators, UART, and VRAM; deployed on Nexys A7 FPGA.",
+        "Designed a streaming 5x5 convolution accelerator with 4 line buffers, 25-multiplier single-cycle MAC, 8 switch-selectable kernels, and hardware pixel clamping; achieved single-pixel-per-clock throughput via MMIO.",
+        "Integrated UART TX/RX (115200 baud) for PC-to-FPGA image transfer and a 640x480 VGA display with dual-port VRAM, enabling real-time image ingestion, convolution, and live output on a monitor."
       ]
     }
   };
@@ -97,12 +135,14 @@
       "JEE Mains: AIR 881 (Top 0.06% of 15 lakh candidates)."
     ],
     "competitive-programming.txt": [
-      "Codeforces (Specialist): Max Rating 1591 | Handle: Madhav_18",
-      "Round 1093 (Div. 2): Ranked 995 globally out of 20,000+ participants.",
-      "Hello 2026: Ranked 2460 globally out of 32,000+ participants."
+      "Codeforces (Expert): Max Rating 1731 | Handle: Madhav_18",
+      "Codeforces Round 1101 (Div. 2): Ranked 464 globally out of 30,000+ participants.",
+      "Codeforces Round 1093 (Div. 2): Ranked 968 globally out of 23,000+ participants.",
+      "CodeChef (3 star): Max Rating 1752 | Handle: madhav_1801"
     ],
     "olympiad.txt": [
-      "NSEP: Selected among top 352 students nationwide in the National Standard Examination in Physics."
+      "NSEP: Selected among top 305 students nationwide in the National Standard Examination in Physics.",
+      "NSEC: Secured a position among the top 1% of all participating students in the Punjab state for NSEC."
     ]
   };
 
@@ -182,9 +222,8 @@
     } else if (currentKey === "projects") {
       hints = [
         "ls",
-        "cd/projects/threadsafe-queue-lib",
-        "cd/projects/velora",
-        "cd/projects/image-convolution-accelerator-riscv",
+        "cd/projects/vortex-engine",
+        "cd/projects/lsm-engine",
         "cd .."
       ];
     } else if (currentKey === "project-item") {
@@ -365,6 +404,9 @@
 
     if (key === "projects") {
       appendList([
+        { label: "virtual-physics-sandbox/", command: "cd/projects/virtual-physics-sandbox" },
+        { label: "vortex-engine/", command: "cd/projects/vortex-engine" },
+        { label: "lsm-engine/", command: "cd/projects/lsm-engine" },
         { label: "threadsafe-queue-lib/", command: "cd/projects/threadsafe-queue-lib" },
         { label: "velora/", command: "cd/projects/velora" },
         { label: "image-convolution-accelerator-riscv/", command: "cd/projects/image-convolution-accelerator-riscv" }
@@ -395,7 +437,8 @@
         { label: "jee.txt", command: "cat jee.txt" },
         { label: "competitive-programming.txt", command: "cat competitive-programming.txt" },
         { label: "olympiad.txt", command: "cat olympiad.txt" },
-        { label: "codeforces.sh", command: "codeforces.sh" }
+        { label: "codeforces.sh", command: "codeforces.sh" },
+        { label: "codechef.sh", command: "codechef.sh" }
       ]);
       return true;
     }

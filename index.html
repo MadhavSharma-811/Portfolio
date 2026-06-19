@@ -87,11 +87,14 @@
         <li>github.sh</li>
         <li>linkedin.sh</li>
         <li>mail.sh</li>
+        <li>virtual_physics.sh</li>
+        <li>vortex_engine.sh</li>
+        <li>lsm_engine.sh</li>
         <li>threadsafe_queue_lib.sh</li>
         <li>velora.sh</li>
         <li>image_convolution_riscv.sh</li>
         <li>codeforces.sh</li>
-        <li>links</li>
+        <li>codechef.sh</li>
         <li>clear</li>
       </ul>
     </section>
@@ -116,7 +119,7 @@
   <template id="tmpl-education">
     <section class="print-block">
       <ul>
-        <li>B.Tech. (Major): Indian Institute of Technology Guwahati | CGPA: 9.35 (Current) | 2024-Present</li>
+        <li>B.Tech. (Major): Indian Institute of Technology Guwahati | CGPA: 9.29 (Current) | 2024-Present</li>
         <li>Senior Secondary (CBSE): 96.0% | 2024</li>
         <li>Secondary (CBSE): 96.2% | 2022</li>
       </ul>
@@ -125,33 +128,72 @@
 
   <template id="tmpl-projects">
     <section class="print-block">
-      <p>-rwxr-xr-x 1 madhav iitg 4096 Jan 2026 threadsafe-queue-lib</p>
+      <p>-rwxr-xr-x 1 madhav iitg 4096 Jul 2026 virtual-physics-sandbox</p>
+      <p>Virtual Physics Sandbox (VIRTUAL-LAB)</p>
+      <p>Coding Club, IIT Guwahati | July 2026</p>
+      <p>
+        Link:
+        <a class="run-link" href="https://github.com/MadhavSharma-811/Virtual-Physics-Sandbox" target="_blank" rel="noreferrer">[RUN: virtual_physics.sh]</a>
+      </p>
+      <ul>
+        <li>Engineered a collaborative React 19 and TypeScript digital twin platform, integrating Matter.js to simulate high-fidelity 2D rigid body physics, dynamic spring constraints, and mechanical systems.</li>
+        <li>Architected a Node.js and Socket.io backend, deploying high-frequency agent middleware to efficiently broadcast spatial deltas and synchronize collaborative states with strict sub-50ms network latency.</li>
+        <li>Developed a real-time Recharts dashboard and a robust MongoDB persistence layer to deploy custom interactive physics templates, tracking granular simulation metrics and user-defined environment variables.</li>
+      </ul>
+
+      <p><br>-rwxr-xr-x 1 madhav iitg 4096 Jun 2026 vortex-engine</p>
+      <p>Vortex Engine: Distributed Telemetry Processing</p>
+      <p>Self Project | June 2026</p>
+      <p>
+        Link:
+        <a class="run-link" href="https://github.com/MadhavSharma-811/Vortex" target="_blank" rel="noreferrer">[RUN: vortex_engine.sh]</a>
+      </p>
+      <ul>
+        <li>Engineered a distributed C++20 telemetry ingestion engine utilizing Apache Kafka to achieve a peak aggregate throughput of 640,000+ msgs/sec across a horizontally scaled, Dockerized multi-node consumer fleet.</li>
+        <li>Architected a rigorous zero-allocation data path leveraging cache-aligned, wait-free SPSC ring buffers to entirely eliminate OS kernel bottlenecks, delivering a verified 0 µs P99 latency with a &lt;50 MB footprint.</li>
+        <li>Integrated a dynamic shared-object plugin architecture employing AVX2 SIMD vector instructions to seamlessly hot-swap custom processing algorithms and massively accelerate real-time Z-score anomaly detection.</li>
+      </ul>
+
+      <p><br>-rwxr-xr-x 1 madhav iitg 4096 May 2026 lsm-engine</p>
+      <p>LSM-Engine: High-Performance Key-Value Store</p>
+      <p>Self Project | May 2026</p>
+      <p>
+        Link:
+        <a class="run-link" href="https://github.com/MadhavSharma-811/lsm-engine" target="_blank" rel="noreferrer">[RUN: lsm_engine.sh]</a>
+      </p>
+      <ul>
+        <li>Engineered a high-performance C++20 LSM-Tree storage engine achieving a verified 3.89M ops/sec read throughput by implementing zero-allocation skip lists to entirely bypass OS-level heap allocation bottlenecks.</li>
+        <li>Architected a robust Multi-Version Concurrency Control (MVCC) system using append-only data structures and custom binary sequence comparators to guarantee snapshot isolation and highly concurrent lock-free reads.</li>
+        <li>Optimized read-paths using Murmur3-hashed Bloom Filters to completely short-circuit disk I/O for missing keys, while deploying a background K-Way Min-Heap Compactor to aggressively merge overlapping SSTables.</li>
+      </ul>
+
+      <p><br>-rwxr-xr-x 1 madhav iitg 4096 Apr 2026 threadsafe-queue-lib</p>
       <p>ThreadsafeQueueLib: High-performance Lock-Free and Wait-Free Queue Library</p>
-      <p>Coding Club, IIT Guwahati | Jan 2026 - Ongoing</p>
+      <p>Coding Club, IIT Guwahati | Feb 2026 - April 2026</p>
       <p>
         Link:
         <a class="run-link" href="https://github.com/AyushGarg8646/ThreadSafeQueue" target="_blank" rel="noreferrer">[RUN: threadsafe_queue_lib.sh]</a>
       </p>
       <ul>
-        <li>Designing and implementing a C++ concurrency library providing wait-free SPSC and lock-free MPSC/MPMC queues using atomic memory ordering with std::atomic, optimized for low-latency bursty traffic patterns.</li>
+        <li>Designing and implementing a C++ concurrency library providing wait-free SPSC and lock-free MPSC/MPMC queues using atomic memory ordering with std::atomic, specifically optimized for low-latency bursty traffic patterns.</li>
         <li>Implementing high-performance bounded ring-buffers and unbounded linked-node queues utilizing cache-line alignment to mitigate false sharing and maximize L1/L2 cache efficiency in high-contention scenarios.</li>
-        <li>Architecting a multi-threaded benchmarking framework to perform rigorous stress-testing and measure throughput, per-operation latency, and thread contention under varying workloads.</li>
+        <li>Architecting a robust multi-threaded benchmarking framework to perform rigorous stress-testing and measure core metrics including throughput, per-operation latency, and thread contention under varying workloads.</li>
       </ul>
 
-      <p>-rwxr-xr-x 1 madhav iitg 4096 Feb 2026 velora</p>
+      <p><br>-rwxr-xr-x 1 madhav iitg 4096 Feb 2026 velora</p>
       <p>Route Optimisation Engine (VELORA)</p>
       <p>Kriti '26, IIT Guwahati | February 2026</p>
       <p>
         Link:
-        <a class="run-link" href="https://github.com/MadhavSharma-811" target="_blank" rel="noreferrer">[RUN: velora.sh]</a>
+        <a class="run-link" href="https://github.com/MadhavSharma-811/Velora-route-optimisation" target="_blank" rel="noreferrer">[RUN: velora.sh]</a>
       </p>
       <ul>
-        <li>Developed a dynamic Multi-Depot Vehicle Routing Problem (MD-VRPTW) engine using a Multi-Start Greedy Variable Neighborhood Search (VNS) to minimize aggregate transport costs.</li>
-        <li>Formulated a Mixed-Integer Programming model incorporating NP-hard constraints such as time windows, passenger priority, heterogeneous fleet capacities, and spatial routing.</li>
-        <li>Engineered a Rolling Horizon Framework to handle real-time dynamic request interrupts, categorizing scheduled trips as committed or malleable for fluid re-optimization of active routes.</li>
+        <li>Engineered an MD-VRPTW routing engine employing a Multi-Start Greedy VNS and stochastic micro-batching algorithm, successfully reducing aggregate operational costs by 79.17% and overall travel time by 73.1%.</li>
+        <li>Formulated a rigorous Mixed-Integer Programming model enforcing strict lexicographic state acceptance to mathematically resolve complex NP-Hard constraints encompassing time windows and heterogeneous fleets.</li>
+        <li>Designed a resilient, adaptive power-law scaling framework that strictly bounds the worst-case search space algorithm complexity to O(V * E log E), ensuring highly deterministic execution times during dense traffic spikes.</li>
       </ul>
 
-      <p>-rwxr-xr-x 1 madhav iitg 4096 Apr 2026 image-convolution-accelerator-riscv</p>
+      <p><br>-rwxr-xr-x 1 madhav iitg 4096 Apr 2026 image-convolution-accelerator-riscv</p>
       <p>Image Convolution Accelerator using RISC-V</p>
       <p>Course Project CS224 (Prof. Lokesh Sidhu), IIT Guwahati | April 2026</p>
       <p>
@@ -159,43 +201,49 @@
         <a class="run-link" href="https://github.com/Keshav-goyal006/CS224-Project" target="_blank" rel="noreferrer">[RUN: image_convolution_riscv.sh]</a>
       </p>
       <ul>
-        <li>Architected a real-time image processing system in Verilog, bridging a custom RISC-V soft-core with specialized hardware accelerators to optimize high-bandwidth data flow.</li>
-        <li>Designed a 3-stage pipelined processor featuring a dynamic branch prediction unit and a Branch Target Buffer (BTB) to minimize control hazards.</li>
-        <li>Developed a highly parallelized convolution engine using 3x3 MAC units for spatial filtering (grayscale, edge detection) with a custom VGA controller.</li>
+        <li>Built a RISC-V SoC (RV32IM) in Verilog with a 3-stage pipelined CPU, register forwarding, dual reset (full + warm), and an SoC bus routing traffic to DMEM, accelerators, UART, and VRAM; deployed on Nexys A7 FPGA.</li>
+        <li>Designed a streaming 5x5 convolution accelerator with 4 line buffers, 25-multiplier single-cycle MAC, 8 switch-selectable kernels, and hardware pixel clamping; achieved single-pixel-per-clock throughput via MMIO.</li>
+        <li>Integrated UART TX/RX (115200 baud) for PC-to-FPGA image transfer and a 640x480 VGA display with dual-port VRAM, enabling real-time image ingestion, convolution, and live output on a monitor.</li>
       </ul>
     </section>
   </template>
 
   <template id="tmpl-skills">
     <section class="print-block">
-      <p>Programming: C/C++, Python*</p>
-      <p>Database Management: MySQL, MongoDB*</p>
+      <p>Programming: C/C++, Python*, Verilog*</p>
       <p>Web Development: Node.js*, HTML/CSS</p>
-      <p>Miscellaneous: Git*, Windows, Linux*</p>
+      <p>Database Management: MySQL</p>
+      <p>Miscellaneous: Git, Linux*</p>
       <p>*Elementary proficiency</p>
     </section>
   </template>
 
-  <template id="tmpl-achievements">
+<template id="tmpl-achievements">
     <section class="print-block">
       <ul>
         <li>JEE Advanced: Secured AIR 584 (Top 0.4% of 1.5 lakh students).</li>
         <li>JEE Mains: Secured AIR 881 (Top 0.06% of 15 lakh candidates).</li>
-        <li>
-          Codeforces (Specialist): Max Rating 1591 | Handle: Madhav_18
+        <li style="margin-top: 12px;">
+          Codeforces (Expert): Max Rating 1731 | Handle: Madhav_18
           <a class="run-link" href="https://codeforces.com/profile/Madhav_18" target="_blank" rel="noreferrer">[RUN: codeforces.sh]</a>
         </li>
-        <li>Ranked 995 globally in Round 1093 (Div. 2) out of 20,000+ participants.</li>
-        <li>Ranked 2460 globally in Hello 2026 out of 32,000+ participants.</li>
-        <li>NSEP: Selected among the top 352 students nationwide in the National Standard Examination in Physics.</li>
+        <li>Secured a global rank of 464 in Codeforces Round 1101 (Div. 2) among 30,000+ participants.</li>
+        <li>Secured a global rank of 968 in Codeforces Round 1093 (Div. 2) among 23,000+ participants.</li>
+        <li style="margin-top: 12px;">
+          CodeChef (3 star): Max Rating 1752 | Handle: madhav_1801
+          <a class="run-link" href="https://www.codechef.com/users/madhav_1801" target="_blank" rel="noreferrer">[RUN: codechef.sh]</a>
+        </li>
+        <li style="margin-top: 12px;">NSEP: Selected among the top 305 students nationwide in the National Standard Examination in Physics.</li>
+        <li>NSEC: Secured a position among the top 1% of all participating students in the Punjab state for NSEC.</li>
       </ul>
     </section>
   </template>
 
   <template id="tmpl-courses">
     <section class="print-block">
-      <p>Computer Science: Data Structures &amp; Algorithms, Digital Design, Design and Analysis of Algorithms, Computer Architecture and Organization, Database Management Systems, Formal Languages and Automata Theory.</p>
-      <p>Mathematics: Real Analysis, Probability Theory and Random Processes, Elementary Number Theory, Discrete Mathematics.</p>
+      <p>Computer Science: Data Structures &amp; Algorithms, Digital Design, Design and Analysis of Algorithms*, Computer Architecture and Organization*, Database Management Systems, Formal Languages and Automata Theory.</p>
+      <p>Mathematics: Probability Theory and Random Processes, Elementary Number Theory*, Discrete Mathematics.</p>
+      <p>(*AA Grade)</p>
     </section>
   </template>
 
